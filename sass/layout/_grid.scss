@@ -1,0 +1,52 @@
+$columns: $grid-columns;
+$spacer: 12px; // get it from variables
+
+@mixin make-col($size, $columns) {
+  width: 100%;
+  padding: $spacer;
+  flex: 0 0 percentage($size / $columns);
+  max-width: percentage($size / $columns);
+}
+
+// Grid classes
+.container {
+  width: 100%;
+  padding: $spacer;;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+  margin-bottom: $spacer;
+}
+
+// columns
+@for $i from 1 through $columns {
+  .col-#{$i} {
+    @include make-col($i, $columns);
+  }
+
+  .col-phone-#{$i} {
+    @include respond(phone) {
+      @include make-col($i, $columns);
+    }
+  }
+
+  .col-tab-land-#{$i} {
+    @include respond(tab-land) {
+      @include make-col($i, $columns);
+    }
+  }
+  
+  .col-tab-port-#{$i} {
+    @include respond(tab-port) {
+      @include make-col($i, $columns);
+    }
+  }
+  .col-big-desktop-#{$i} {
+    @include respond(big-desktop) {
+      @include make-col($i, $columns);
+    }
+  }
+}
