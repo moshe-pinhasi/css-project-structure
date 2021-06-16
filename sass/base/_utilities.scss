@@ -1,8 +1,56 @@
 .u-center-text { text-align: center !important; }
 
-.u-margin-bottom-small { margin-bottom: 1.5rem !important; }
-.u-margin-bottom-medium { margin-bottom: 4rem !important; }
-.u-margin-bottom-big { margin-bottom: 8rem !important; }
+// margin-bottom
+.u-mb-sm { margin-bottom: 1.5rem !important; }
+.u-mb-md { margin-bottom: 4rem !important; }
+.u-mb-lg { margin-bottom: 8rem !important; }
+.u-mb-xlg { margin-bottom: 10rem !important; }
 
-.u-margin-top-big { margin-top: 8rem !important; }
-.u-margin-top-huge { margin-top: 10rem !important; }
+// margin-top
+.u-mt-sm { margin-top: 1.5rem !important; }
+.u-mt-md { margin-top: 4rem !important; }
+.u-mt-lg { margin-top: 8rem !important; }
+.u-mt-xlg { margin-top: 10rem !important; }
+
+
+.hide-for-phone {
+  @include respond(phone) {
+    display: none;
+  }
+}
+
+.hide-for-tab-land {
+  @include respond(tab-land) {
+    display: none;
+  }
+}
+
+.hide-for-tab-port {
+  @include respond(tab-port) {
+    display: none;
+  }
+}
+
+.show-for-phone {
+  @include respond(phone) {
+    display: block!important;
+  }
+}
+
+.show-for-tab-land {
+  @include respond(tab-land) {
+    display: block!important;
+  }
+}
+
+.show-for-tab-port {
+  @include respond(tab-port) {
+    display: block!important;
+  }
+}
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
