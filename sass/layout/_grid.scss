@@ -50,3 +50,10 @@ $spacer: 12px; // get it from variables
     }
   }
 }
+
+// gap
+@for $gap from 1 through 30 {
+  .gap-#{$gap} {
+    gap: #{$gap}px;
+  }
+}
